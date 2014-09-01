@@ -12,6 +12,7 @@
 		97DF323219AD694500B9D07F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97DF323019AD694500B9D07F /* Main.storyboard */; };
 		97DF323419AD694500B9D07F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97DF323319AD694500B9D07F /* Images.xcassets */; };
 		97DF324019AD694500B9D07F /* mouseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DF323F19AD694500B9D07F /* mouseTests.swift */; };
+		97F7BD3319B17780007E1C32 /* CBDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F7BD3219B17780007E1C32 /* CBDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		97DF323919AD694500B9D07F /* mouseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mouseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97DF323E19AD694500B9D07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97DF323F19AD694500B9D07F /* mouseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mouseTests.swift; sourceTree = "<group>"; };
+		97F7BD3219B17780007E1C32 /* CBDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				97DF322C19AD694500B9D07F /* AppDelegate.swift */,
 				97DF322E19AD694500B9D07F /* ViewController.swift */,
+				97F7BD3219B17780007E1C32 /* CBDelegate.swift */,
 				97DF323019AD694500B9D07F /* Main.storyboard */,
 				97DF323319AD694500B9D07F /* Images.xcassets */,
 				97DF322A19AD694500B9D07F /* Supporting Files */,
@@ -210,6 +213,7 @@
 			files = (
 				97DF322F19AD694500B9D07F /* ViewController.swift in Sources */,
 				97DF322D19AD694500B9D07F /* AppDelegate.swift in Sources */,
+				97F7BD3319B17780007E1C32 /* CBDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
