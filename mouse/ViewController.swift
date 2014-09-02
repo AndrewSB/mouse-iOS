@@ -80,11 +80,7 @@ class ViewController: UIViewController {
                 /*if (fabs(accx) >= 0.01 && fabs(self.velx) <= -0.01) || (fabs(accx) <= -0.01 && fabs(self.velx) >= 0.01) {
                     self.velx /= 2
                 }*/
-<<<<<<< HEAD
                 /*
-=======
-                
->>>>>>> FETCH_HEAD
                 if fabs(accx) > 0.01 {
                     self.velx += accx*0.1
                 } else if fabs(NSString(format: "%.3f", self.velx).doubleValue) != 0 {
@@ -95,7 +91,6 @@ class ViewController: UIViewController {
                 } else if fabs(NSString(format: "%.3f", self.velx).doubleValue) != 0 {
                     self.vely /= 2
                 }
-<<<<<<< HEAD
                 */
                 if accx >= 0 {
                     println(NSString(format: "%.8f", accx))
@@ -103,27 +98,18 @@ class ViewController: UIViewController {
                 } else {
                     println(NSString(format: "%.8f", accx))
                     self.accX.text = NSString(format: "%.8f", accx)
-=======
-//                if accx >= 0 {
-//                    println(NSString(format: "accx:  %.2f", accx))
-//                    self.accX.text = NSString(format: " %.2f", accx)
-//                } else {
-//                    println(NSString(format: "accx: %.2f", accx))
-//                    self.accX.text = NSString(format: "%.2f", accx)
-//                }
                 if self.velx >= 0 {
                     println(NSString(format: "velx:  %.2f", self.velx))
                     self.accX.text = NSString(format: " %.2f", self.velx)
                 } else {
                     println(NSString(format: "velx: %.2f", self.velx))
                     self.accX.text = NSString(format: "%.2f", self.velx)
->>>>>>> FETCH_HEAD
                 }
 
-                var clickl = false
-                var clickr = false
+                //var clickl = false
+                //var clickr = false
                 //self.bluetoothManager.startAdvertising(["value": 1])
-           // }
+            }
         })
     }
 
