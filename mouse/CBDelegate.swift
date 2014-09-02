@@ -9,14 +9,32 @@
 import UIKit
 import CoreBluetooth
 
-class CBDelegate: NSObject, CBPeripheralManagerDelegate {
-    var peripheral: CBPeripheralManager!
-    var service: CBMutableService!
+class BluetoothBroadcaster: NSObject, CBPeripheralManagerDelegate {
+    
+    let peripheral: CBPeripheralManager!
     var characteristic: CBMutableCharacteristic!
     var advertisedata: NSDictionary!
+    let UUID: CBUUID!
     
-    //let service = CBMutableService(type: CBUUID.UUIDWithString("0011"), primary: true)
-    //self.peripheral.addService(self.service)
+    init(UUID: CBUUID) {
+        super.init()
+        self.UUID = UUID
+        //var service = CBService()
+        self.peripheral = CBPeripheralManager(delegate: self, queue: nil)
+        var mutableservice = CBMutableService(type: self.UUID, primary: true)
+        //service.characteristics = [1,2,3]
+        //var props = CBCharacteristicProperties()
+        //var perms = CBAttributePermissions()
+        //var characteristics = CBMutableCharacteristic(type: self.UUID, properties: props, value: nil, permissions: perms)
+        //var service = CBService()
+        //mutableservice.characteristics = [characteristics]
+        //mutableservice.includedServices = [service]
+        //println("services: ")
+        //println(service.characteristics)
+        //println(service.includedServices)
+        self.peripheral.addService(mutableservice)
+        self.peripheral.startAdvertising([1: "hey"])
+    }
     
     func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager!) {
         println("updated state")

@@ -14,12 +14,13 @@ import CoreBluetooth
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var window: UIWindow?
-    var bluetooth: CBDelegate?
+    var window: UIWindow!
+    let uuid = CBUUID.UUIDWithString("0x1812")
     
     
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
         // Override point for customization after application launch.
+        var bluetooth =  BluetoothBroadcaster(UUID: uuid)
         return true
     }
     
