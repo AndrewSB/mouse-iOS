@@ -79,23 +79,31 @@ class ViewController: UIViewController {
                     self.velx /= 2
                 }*/
                 
-                if fabs(accx) > 0.001 {
+                if fabs(accx) > 0.01 {
                     self.velx += accx*0.1
                 } else if fabs(NSString(format: "%.3f", self.velx).doubleValue) != 0 {
                     self.velx /= 2
                 }
-                if fabs(accy) > 0.001 {
+                if fabs(accy) > 0.01 {
                     self.vely += accx*0.1
                 } else if fabs(NSString(format: "%.3f", self.velx).doubleValue) != 0 {
                     self.vely /= 2
                 }
-                if accx >= 0 {
-                    println(NSString(format: "accx:  %.2f", accx))
-                    self.accX.text = NSString(format: " %.2f", accx)
+//                if accx >= 0 {
+//                    println(NSString(format: "accx:  %.2f", accx))
+//                    self.accX.text = NSString(format: " %.2f", accx)
+//                } else {
+//                    println(NSString(format: "accx: %.2f", accx))
+//                    self.accX.text = NSString(format: "%.2f", accx)
+//                }
+                if self.velx >= 0 {
+                    println(NSString(format: "velx:  %.2f", self.velx))
+                    self.accX.text = NSString(format: " %.2f", self.velx)
                 } else {
-                    println(NSString(format: "accx: %.2f", accx))
-                    self.accX.text = NSString(format: "%.2f", accx)
+                    println(NSString(format: "velx: %.2f", self.velx))
+                    self.accX.text = NSString(format: "%.2f", self.velx)
                 }
+
                 var clickl = false
                 var clickr = false
                 //self.bluetoothManager.startAdvertising(["value": 1])
