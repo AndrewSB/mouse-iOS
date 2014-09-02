@@ -51,7 +51,6 @@ class ViewController: UIViewController {
         motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue.currentQueue(), withHandler: {(accelerometerData: CMAccelerometerData!, error:NSError!) in
             //calibration
             var acc = accelerometerData.acceleration
-            /*
             if self.cntr < self.til {
                 self.sumx += acc.x
                 self.sumy += acc.y
@@ -61,10 +60,9 @@ class ViewController: UIViewController {
                 self.avgy = self.sumy/Double(self.cntr)
                 self.cntr++
             } else {
-*/
-                //var accx = acc.x// - self.avgx
-                //var accy = acc.y// - self.avgy
-            
+                var accx = acc.x - self.avgx
+                var accy = acc.y - self.avgy
+            /*
                 if countElements(self.lastaccxs) > self.numlastacc-1 {
                     self.lastaccxs.removeAtIndex(0)
                     self.lastaccys.removeAtIndex(0)
@@ -74,29 +72,31 @@ class ViewController: UIViewController {
                 var accx = self.lastaccxs.reduce(0,+)/Double(self.numlastacc)
                 var accy = self.lastaccys.reduce(0,+)/Double(self.numlastacc)
                     
-                accx = NSString(format: "%.3f", accx - self.avgx).doubleValue
-                accy = NSString(format: "%.3f", accx - self.avgy).doubleValue
+                accx = NSString(format: "%.8f", accx - self.avgx).doubleValue
+                accy = NSString(format: "%.8f", accx - self.avgy).doubleValue
+            */
                 /*if (fabs(accx) >= 0.01 && fabs(self.velx) <= -0.01) || (fabs(accx) <= -0.01 && fabs(self.velx) >= 0.01) {
                     self.velx /= 2
                 }*/
-                /*
                 if fabs(accx) > 0.01 {
-                    self.velx += accx*0.1
-                } else if fabs(NSString(format: "%.3f", self.velx).doubleValue) != 0 {
+                    self.velx += accx*0.01
+                }
+                /*else if fabs(NSString(format: "%.3f", self.velx).doubleValue) != 0 {
                     self.velx /= 2
-                }
+                }*/
                 if fabs(accy) > 0.01 {
-                    self.vely += accx*0.1
-                } else if fabs(NSString(format: "%.3f", self.velx).doubleValue) != 0 {
-                    self.vely /= 2
+                    self.vely += accy*0.1
                 }
-                */
+                /*else if fabs(NSString(format: "%.3f", self.vely).doubleValue) != 0 {
+                    self.vely /= 2
+                }*/
                 if accx >= 0 {
                     println(NSString(format: "%.8f", accx))
                     self.accX.text = NSString(format: " %.8f", accx)
                 } else {
                     println(NSString(format: "%.8f", accx))
                     self.accX.text = NSString(format: "%.8f", accx)
+                }
                 /*
                 if self.velx >= 0 {
                     println(NSString(format: "velx:  %.2f", self.velx))
