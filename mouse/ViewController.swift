@@ -62,9 +62,9 @@ class ViewController: UIViewController {
                 self.cntr++
             } else {
 */
-                var accx = acc.x// - self.avgx
-                var accy = acc.y// - self.avgy
-                /*
+                //var accx = acc.x// - self.avgx
+                //var accy = acc.y// - self.avgy
+            
                 if countElements(self.lastaccxs) > self.numlastacc-1 {
                     self.lastaccxs.removeAtIndex(0)
                     self.lastaccys.removeAtIndex(0)
@@ -76,7 +76,6 @@ class ViewController: UIViewController {
                     
                 accx = NSString(format: "%.3f", accx - self.avgx).doubleValue
                 accy = NSString(format: "%.3f", accx - self.avgy).doubleValue
-                */
                 /*if (fabs(accx) >= 0.01 && fabs(self.velx) <= -0.01) || (fabs(accx) <= -0.01 && fabs(self.velx) >= 0.01) {
                     self.velx /= 2
                 }*/
@@ -98,6 +97,7 @@ class ViewController: UIViewController {
                 } else {
                     println(NSString(format: "%.8f", accx))
                     self.accX.text = NSString(format: "%.8f", accx)
+                /*
                 if self.velx >= 0 {
                     println(NSString(format: "velx:  %.2f", self.velx))
                     self.accX.text = NSString(format: " %.2f", self.velx)
@@ -105,7 +105,7 @@ class ViewController: UIViewController {
                     println(NSString(format: "velx: %.2f", self.velx))
                     self.accX.text = NSString(format: "%.2f", self.velx)
                 }
-
+                */
                 //var clickl = false
                 //var clickr = false
                 //self.bluetoothManager.startAdvertising(["value": 1])
