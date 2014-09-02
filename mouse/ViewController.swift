@@ -60,6 +60,9 @@ class ViewController: UIViewController {
                 self.avgy = self.sumy/Double(self.cntr)
                 self.cntr++
             } else {
+                var accx = acc.x - self.avgx
+                var accy = acc.y - self.avgy
+                /*
                 if countElements(self.lastaccxs) > self.numlastacc-1 {
                     self.lastaccxs.removeAtIndex(0)
                     self.lastaccys.removeAtIndex(0)
@@ -71,7 +74,7 @@ class ViewController: UIViewController {
                     
                 accx = NSString(format: "%.3f", accx - self.avgx).doubleValue
                 accy = NSString(format: "%.3f", accx - self.avgy).doubleValue
-                
+                */
                 /*if (fabs(accx) >= 0.01 && fabs(self.velx) <= -0.01) || (fabs(accx) <= -0.01 && fabs(self.velx) >= 0.01) {
                     self.velx /= 2
                 }*/
