@@ -10,10 +10,10 @@ import UIKit
 import CoreBluetooth
 
 class CBDelegate: NSObject, CBPeripheralManagerDelegate {
-    var peripheral: CBPeripheralManager?
-    var service: CBMutableService?
-    var characteristic: CBMutableCharacteristic?
-    var advertisedata: NSDictionary?
+    var peripheral: CBPeripheralManager!
+    var service: CBMutableService!
+    var characteristic: CBMutableCharacteristic!
+    var advertisedata: NSDictionary!
     
     //let service = CBMutableService(type: CBUUID.UUIDWithString("0011"), primary: true)
     //self.peripheral.addService(self.service)

@@ -90,6 +90,7 @@ class ViewController: UIViewController {
                 /*else if fabs(NSString(format: "%.3f", self.vely).doubleValue) != 0 {
                     self.vely /= 2
                 }*/
+                /*
                 if accx >= 0 {
                     println(NSString(format: "%.8f", accx))
                     self.accX.text = NSString(format: " %.8f", accx)
@@ -97,7 +98,7 @@ class ViewController: UIViewController {
                     println(NSString(format: "%.8f", accx))
                     self.accX.text = NSString(format: "%.8f", accx)
                 }
-                /*
+*/
                 if self.velx >= 0 {
                     println(NSString(format: "velx:  %.2f", self.velx))
                     self.accX.text = NSString(format: " %.2f", self.velx)
@@ -105,7 +106,6 @@ class ViewController: UIViewController {
                     println(NSString(format: "velx: %.2f", self.velx))
                     self.accX.text = NSString(format: "%.2f", self.velx)
                 }
-                */
                 //var clickl = false
                 //var clickr = false
                 //self.bluetoothManager.startAdvertising(["value": 1])
