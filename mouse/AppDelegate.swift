@@ -12,18 +12,30 @@ import UIKit
 import CoreBluetooth
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CBPeripheralManagerDelegate {
     
     var window: UIWindow!
-    let uuid = CBUUID.UUIDWithString("0x1812")
-    
+    var bluetooth: LXCBPeripheralServer!
     
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
         // Override point for customization after application launch.
-        var bluetooth =  BluetoothBroadcaster(UUID: uuid)
+        bluetooth = LXCBPeripheralServer()
         return true
     }
-    
+    func advertise() {
+        //peripheral.startAdvertising([CBAdvertisementDataServiceUUIDsKey: [uuid]])
+    }
+    func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager!) {
+        println("updated state")
+    }
+    func peripheralManagerDidStartAdvertising(peripheral: CBPeripheralManager!,
+        error: NSError!) {
+            if (error == nil) {
+                println("started advertising")
+            } else {
+                println("error")
+            }
+    }
     func applicationWillResignActive(application: UIApplication!) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

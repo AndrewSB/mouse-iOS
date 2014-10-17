@@ -19,21 +19,11 @@ class BluetoothBroadcaster: NSObject, CBPeripheralManagerDelegate {
     init(UUID: CBUUID) {
         super.init()
         self.UUID = UUID
-        //var service = CBService()
-        self.peripheral = CBPeripheralManager(delegate: self, queue: nil)
-        var mutableservice = CBMutableService(type: self.UUID, primary: true)
-        //service.characteristics = [1,2,3]
-        //var props = CBCharacteristicProperties()
-        //var perms = CBAttributePermissions()
-        //var characteristics = CBMutableCharacteristic(type: self.UUID, properties: props, value: nil, permissions: perms)
-        //var service = CBService()
-        //mutableservice.characteristics = [characteristics]
-        //mutableservice.includedServices = [service]
-        //println("services: ")
-        //println(service.characteristics)
-        //println(service.includedServices)
-        self.peripheral.addService(mutableservice)
-        self.peripheral.startAdvertising([1: "hey"])
+        peripheral = CBPeripheralManager(delegate: self, queue: nil)
+        var service = CBMutableService(type: self.UUID, primary: true)
+        peripheral.addService(service)
+        peripheral.startAdvertising(["12": "12"])
+        println("advertise")
     }
     
     func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager!) {
